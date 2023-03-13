@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Noto+Serif+Display:wght@200;400;700&display=swap");
+
+body {
+  margin: 0;
+  // display: flex;
+  // min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  // min-width: 100vw;
+}
+
+main {
+    
+  h1 {
+    font-family: "Noto Serif Display", serif;
+    font-weight: 200;
+    font-size: 3rem;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b5554;
+  background-image: url(/mi6-seal-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  flex: 1;
+}

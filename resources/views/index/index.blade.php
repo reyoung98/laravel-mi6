@@ -8,8 +8,9 @@
 </head>
 <body>
 
-    <div id="app">
-    </div>
+    <div id="root"></div>
     
+    @viteReactRefresh
+    @vite('resources/js/front/front.jsx')
 </body>
 </html>

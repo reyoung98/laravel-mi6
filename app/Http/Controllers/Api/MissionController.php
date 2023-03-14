@@ -15,11 +15,24 @@ class MissionController extends Controller
         return($missions);
     }
 
-    public function show( $missionId)
+    public function show($missionId)
     {
-        
+
         $mission = Mission::with('people')->findOrFail($missionId);
 
         return($mission);
+    }
+
+    public function store(Request $request)
+    {
+        $mission = Mission::findOrFail($request->input('id'));
+
+        $mission->name = $request->input('name');
+        $mission->year = $request->input('year');
+        $mission->outcome = $request->input('outcome'); // this isn't working some reason 
+        // dd($mission);           // can compare old with new in 'preview' tab of Network
+
+        $mission->save();
+        return $mission;           // return mission after editing it
     }
 }

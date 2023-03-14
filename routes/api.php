@@ -25,3 +25,4 @@ Route::get('/people/search', [PeopleController::class, 'search']);
 Route::get('/statuses', [StatusController::class, 'index']);
 Route::get('/missions', [MissionController::class, 'index']);
 Route::get('/missions/{missionId}', [MissionController::class, 'show']);
+Route::post('/missions/store', [MissionController::class, 'store']);

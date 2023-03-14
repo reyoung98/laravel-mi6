@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react'
 import './StatusFilter.scss'
+import axios from 'axios'
 
 export default function StatusFilter({selectedStatus, setSelectedStatus}) {
 
     const [statuses, setStatuses] = useState([])
 
     const loadStatuses = async () => {
-        const response = await fetch('/api/statuses')
-        const data = await response.json()
+        try {
+            const response = await axios.get('/api/statuses')
+            console.log(response)
+            setStatuses(response.data)
 
-        setStatuses(data)
+        } catch (error) {
+            console.log(error)
+        }      
     }
 
     useEffect(() => {

@@ -44,7 +44,7 @@ export default function MissionEditForm({ missionId, setMissionId}) {
             <form action="" method="post" onSubmit={handleSubmit}>
                 <input type="text" name="name" id="" placeholder="Name" value={mission.name} onChange={handleChange}/>
                 <input type="text" name="year" id="" placeholder="Year" value={mission.year} onChange={handleChange}/>
-                <input type="text" name="outcome" id="" placeholder="outcome" value={mission.status} onChange={handleChange}/>
+                <input type="text" name="outcome" id="" placeholder="Outcome" value={mission.status} onChange={handleChange}/>
                 <button>Save</button>
             </form>
         </div> : 'loading...'

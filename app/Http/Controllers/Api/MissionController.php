@@ -27,10 +27,12 @@ class MissionController extends Controller
     {
         $mission = Mission::findOrFail($request->input('id'));
 
+        // dd($request->all());
+
         $mission->name = $request->input('name');
         $mission->year = $request->input('year');
-        $mission->outcome = $request->input('outcome'); // this isn't working some reason 
-        // dd($mission);           // can compare old with new in 'preview' tab of Network
+        $mission->outcome = $request->input('outcome'); 
+        // dd($mission);            // can compare old with new in 'preview' tab of Network
 
         $mission->save();
         return $mission;           // return mission after editing it

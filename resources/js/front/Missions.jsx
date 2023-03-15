@@ -19,9 +19,6 @@ export default function Missions() {
         getMissions();
     }, [])
 
-    const handleClick = (e) => {
-        setMissionId(e.target.value)
-    }
 
     return (
         <div className="missions">
@@ -29,11 +26,15 @@ export default function Missions() {
             { missionId === null ?
                 <>
                     <h1>Missions</h1>
-                    <ul>
+                    <div className="mission-list">
                         {missions.map((mission) => {
-                            return <li key={mission.id} value={mission.id} onClick={handleClick}>{mission.name} - {mission.year}</li>;
+                            return <a className="mission-card" key={mission.id} value={mission.id} onClick={()=>{setMissionId(mission.id)}}>
+                                        <div className="mission-name">{mission.name}</div>
+                                        <div>{mission.year}</div>
+                                        <div>{mission.outcome}</div>
+                                    </a>
                         })}
-                    </ul>
+                    </div>
                 </>
                 : <MissionEditForm missionId={ missionId } setMissionId={ setMissionId } />
             }

@@ -1,7 +1,16 @@
-li {
+.mission-list {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.mission-card {
+    background-color: #163838;
+    padding: .5rem;
+    margin: .5rem;
     cursor: pointer;
 
     &:hover {
         color: pink;
     }
+
 }

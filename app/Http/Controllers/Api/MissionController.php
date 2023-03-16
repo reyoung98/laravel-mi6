@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mission;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMissionDetails;
 
 class MissionController extends Controller
 {
@@ -37,4 +39,16 @@ class MissionController extends Controller
         $mission->save();
         return $mission;           // return mission after editing it
     }
+
+    public function sendMissionDetails(Request $request, $missionId)
+    {
+        // dd($missionId);
+
+        $mission = Mission::find($missionId);
+        // dd($mission);
+
+        Mail::to('test@test.com')
+        ->send(new SendMissionDetails($mission));
+    }
+
 }

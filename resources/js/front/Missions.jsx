@@ -20,6 +20,11 @@ export default function Missions() {
         getMissions();
     }, [])
 
+    const handleClick = async (e) => {
+        // console.log(e.target.value)
+        const response = await axios.get(`/api/send-mission-details/${e.target.value}`);
+    }
+
 
     return (
         <div className="missions">
@@ -29,11 +34,14 @@ export default function Missions() {
                     <h1>Missions</h1>
                     <div className="mission-list">
                         {missions.map((mission) => {
-                            return <Link to={`/missions/${mission.id}/edit`} className="mission-card" key={mission.id} value={mission.id}>
-                                        <div className="mission-name">{mission.name}</div>
-                                        <div>{mission.year}</div>
-                                        <div>{mission.outcome}</div>
-                                    </Link>
+                            return <div className="mission-card">
+                                        <Link to={`/missions/${mission.id}/edit`} key={mission.id} value={mission.id}>
+                                            <div className="mission-name">{mission.name}</div>
+                                        </Link>
+                                            <div>{mission.year}</div>
+                                            <div>{mission.outcome}</div>
+                                        <button onClick={handleClick} value={mission.id}>Send to my email</button>
+                                    </div>
                         })}
                     </div>
                 </>

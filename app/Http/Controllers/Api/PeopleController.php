@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Person;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestEmail;
 
 class PeopleController extends Controller
 {
@@ -21,5 +23,13 @@ class PeopleController extends Controller
         ->get();
 
         return($results);
+    }
+
+    public function sendTestEmail() 
+    {
+        $temp_var = 'Blueberry';
+
+        Mail::to('test@test.com')
+        ->send(new TestEmail($temp_var));
     }
 }

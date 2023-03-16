@@ -3,20 +3,46 @@
     flex-wrap: wrap;
 }
 
-a.mission-card {
-    color: white;
-    text-decoration: none;
-}
-
 .mission-card {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #163838;
+    width: 200px;
     padding: .5rem;
     margin: .5rem;
     cursor: pointer;
 
-    &:hover {
-        color: pink;
+    .mission-name {
+        font-size: 1.1rem;
+        margin-bottom: .3rem;
+    }    
+
+    .mission-year {
+        margin-bottom: .3rem;
+    }
+
+    .mission-outcome {
+        margin-bottom: .3rem;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            color: pink;
+        }
+    }
+
+    button {
+        justify-self: flex-end;
+        border: 0;
+        border-radius: 3px;
+        padding: .2rem;
+
+        &:hover {
+            background-color: lightblue;
+        }
     }
 
 }

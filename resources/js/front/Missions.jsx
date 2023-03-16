@@ -38,8 +38,8 @@ export default function Missions() {
                                         <Link to={`/missions/${mission.id}/edit`} key={mission.id} value={mission.id}>
                                             <div className="mission-name">{mission.name}</div>
                                         </Link>
-                                            <div>{mission.year}</div>
-                                            <div>{mission.outcome}</div>
+                                            <div className="mission-year">{mission.year}</div>
+                                            <div className="mission-outcome">{mission.outcome}</div>
                                         <button onClick={handleClick} value={mission.id}>Send to my email</button>
                                     </div>
                         })}

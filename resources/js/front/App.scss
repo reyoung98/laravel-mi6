@@ -8,7 +8,7 @@ body {
 
 .app {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   // min-width: 100vw;
 }
 
@@ -21,6 +21,7 @@ main {
   }
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #2b5554;

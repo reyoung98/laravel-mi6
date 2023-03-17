@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexController::class, 'index']);
+                                                                   // regular expression - 0 or more of any character
+Route::get('/{path?}', [IndexController::class, 'index'])->where('path', '.*')->name('homepage');

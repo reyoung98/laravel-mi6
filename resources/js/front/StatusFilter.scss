@@ -1,0 +1,14 @@
+.status-btn {
+    border: 0;
+    padding: .5rem;
+    margin: .2rem;
+    background-color: white;
+
+    &:hover {
+        background-color: lightblue;
+    }
+}
+
+.status-selected {
+    background-color: pink;
+}
